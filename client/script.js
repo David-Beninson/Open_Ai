@@ -65,6 +65,16 @@ const handleSubmit = async (e) => {
 
   const data = new FormData(form);
 
+   const prompt = data.get("prompt").trim();
+
+  if (!prompt) {
+    // Display an error message if the user input is empty
+    const errorMessage = "Please enter a message.";
+    chatContainer.innerHTML += chatStripe(true, errorMessage);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+    return;
+  }
+
   // user's chatstripe
   chatContainer.innerHTML += chatStripe(false, data.get("prompt"));
 
