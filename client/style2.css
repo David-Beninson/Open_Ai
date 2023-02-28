@@ -1,0 +1,298 @@
+/* Global styles */
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+body {
+  background-color: #f7f7f7;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body[data-theme="dark"] {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+/* Page layout */
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form styles */
+/* form {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* style contaner */
+.contaner {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+textarea {
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+/* Dark mode input style */
+body[data-theme="dark"] textarea {
+  background-color: #333;
+  color: #fff;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+/* Chat styles */
+#chat_container {
+  overflow-y: scroll;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* hide scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.chat-form textarea {
+  width: 90%;
+  height: fit-content;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  resize: none;
+}
+
+.chat-form button {
+  background-image: url('assets/send.svg');
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  border: none;
+  float: right;
+  cursor: pointer;
+}
+
+#chat_container[data-theme="dark"] {
+  background-color: #363636;
+}
+
+.wrapper {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.message {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 3px;
+  margin-left: 10px;
+  flex: 1;
+  font-size: 20px;
+  max-width: 100%;
+  overflow-x: scroll;
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.message[data-theme="dark"] {
+  background-color: #282727;
+  color: rgb(80, 78, 78);
+}
+
+/* Dark mode toggle styles */
+.dark-mode-toggle-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dark-mode-toggle label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.dark-mode-toggle .slider {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 34px;
+  margin-right: 10px;
+}
+
+.dark-mode-toggle .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked+.slider:before {
+  transform: translateX(26px);
+  background-color: #1c1c1c;
+}
+
+.dark-mode-toggle .slider:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  top: 8px;
+  left: 8px;
+  background-color: #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked+.slider:after {
+  transform: translateX(26px);
+  background-color: #fff;
+}
+
+/* Button styles */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:focus {
+  outline: none;
+}
+
+/* Media queries */
+@media only screen and (max-width: 600px) {
+  #chat_container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .input-group textarea {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .input-group button {
+    margin-left: 0;
+  }
+
+  #chat_container {
+    max-height: 300px;
+  }
+
+  .profile img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  #chat_container {
+    max-height: 250px;
+  }
+
+  .profile img {
+    height: 25px;
+    width: 25px;
+  }
+}
